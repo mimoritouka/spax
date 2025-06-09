@@ -1,12 +1,12 @@
 @echo off
 chcp 65001 > nul
-title Spax - Yasal Test Aracı
+title Spax
 
 :start
 cls
 color 0c
 
-:: Banner ve uyarı
+
 echo  ▄████████    ▄███████▄    ▄████████ ▀████    ▐████▀
 echo  ███    ███   ███    ███   ███    ███   ███▌   ████▀
 echo  ███    █▀    ███    ███   ███    ███    ███  ▐███
@@ -62,7 +62,6 @@ echo.
 python spax.py -d %TARGET% -m %METHOD% -t %THREADS% %SECONDS_ARG% --quiet
 
 :: --- Newly added error check---
-:: Eğer python.exe bir hata koduyla (0 dışında) kapandıysa, bunu yakala.
 if %ERRORLEVEL% neq 0 (
     echo.
     echo ==========================================================
