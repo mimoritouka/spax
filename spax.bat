@@ -6,7 +6,7 @@ title Spax - Professional Testing Framework
 cls
 color 0c
 
-:: Banner and warning
+
 echo  ▄████████    ▄███████▄    ▄████████ ▀████    ▐████▀
 echo  ███    ███   ███    ███   ███    ███   ███▌   ████▀
 echo  ███    █▀    ███    ███   ███    ███    ███  ▐███
@@ -23,7 +23,6 @@ echo ==========================================================
 echo.
 
 <<<<<<< HEAD
-:: --- GET USER INPUT ---
 
 set "TARGET_INPUT="
 set /p TARGET_INPUT="Enter target address (e.g., https://example.com): "
@@ -75,7 +74,7 @@ set /p REPORT_INPUT="Report output file (optional, e.g., results.json or report.
 if defined REPORT_INPUT set "REPORT_ARG=--report-file %REPORT_INPUT%"
 
 
-:: --- START THE ATTACK ---
+
 =======
 
 >>>>>>> 82561c943e417861aa964de617662c260c24a64e
