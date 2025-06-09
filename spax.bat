@@ -22,7 +22,7 @@ echo.
 echo ==========================================================
 echo.
 
-:: --- KULLANICIDAN BİLGİ ALMA ---
+
 set "TARGET="
 set /p TARGET="target domain (orn: bombo.com): "
 if not defined TARGET (
@@ -45,7 +45,7 @@ if defined SECONDS_INPUT (
     set "SECONDS_DISPLAY=%SECONDS_INPUT% Second"
 )
 
-:: --- START ATTACK ---
+
 cls
 echo ==========================================================
 echo Attack is starting...
@@ -58,10 +58,10 @@ echo.
 echo ==========================================================
 echo.
 
-:: Run the Python script
+
 python spax.py -d %TARGET% -m %METHOD% -t %THREADS% %SECONDS_ARG% --quiet
 
-:: --- Newly added error check---
+
 if %ERRORLEVEL% neq 0 (
     echo.
     echo ==========================================================
