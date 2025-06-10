@@ -1,5 +1,4 @@
 @echo off
-rem Kod sayfasini UTF-8 olarak ayarla (Türkçe karakterler ve ASCII art için)
 chcp 65001 > nul
 title Spax - Professional Testing Framework
 
@@ -7,7 +6,7 @@ title Spax - Professional Testing Framework
 cls
 color 0c
 
-rem --- ASCII Sanati ve Başlık ---
+rem 
 echo  ▄████████    ▄███████▄    ▄████████ ▀████    ▐████▀
 echo  ███    ███   ███    ███   ███    ███   ███▌   ████▀
 echo  ███    █▀    ███    ███   ███    ███    ███  ▐███
@@ -23,7 +22,7 @@ echo.
 echo ==========================================================
 echo.
 
-rem --- KULLANICIDAN GİRDİLERİ ALMA BÖLÜMÜ ---
+rem 
 
 set "TARGET_INPUT="
 set /p TARGET_INPUT="Enter target address (e.g., https://example.com): "
@@ -65,7 +64,7 @@ set "REPORT_ARG="
 set /p REPORT_INPUT="Report output file (optional, e.g., results.json or report.html): "
 if defined REPORT_INPUT set "REPORT_ARG=--report-file %REPORT_INPUT%"
 
-rem --- PYTHON SCRIPTINI BAŞLATMA ---
+rem
 cls
 echo ==========================================================
 echo STARTING TEST...
@@ -77,10 +76,10 @@ echo.
 echo ==========================================================
 echo.
 
-rem Python scriptini toplanan argümanlarla çalıştır
+
 python spax.py %TARGET_INPUT% -p %PROTOCOL% -t %THREADS% %DURATION_ARG% %RAMP_UP_ARG% %PROXY_ARG% %PAYLOAD_ARG% %PAYLOAD_MODE_ARG% %REPORT_ARG%
 
-rem Scriptin hata ile çıkıp çıkmadığını kontrol et
+rem
 if %ERRORLEVEL% neq 0 (
     echo.
     echo ==========================================================
