@@ -1,4 +1,5 @@
 @echo off
+rem Kod sayfasini UTF-8 olarak ayarla (Türkçe karakterler ve ASCII art için)
 chcp 65001 > nul
 title Spax - Professional Testing Framework
 
@@ -6,13 +7,13 @@ title Spax - Professional Testing Framework
 cls
 color 0c
 
-
+rem --- ASCII Sanati ve Başlık ---
 echo  ▄████████    ▄███████▄    ▄████████ ▀████    ▐████▀
 echo  ███    ███   ███    ███   ███    ███   ███▌   ████▀
 echo  ███    █▀    ███    ███   ███    ███    ███  ▐███
 echo  ███          ███    ███   ███    ███    ▀███▄███▀
 echo ▀███████████ ▀█████████▀  ▀███████████    ████▀██▄
-echo        ███   ███          ███    ███   ▐███  ▀███
+echo         ███   ███          ███    ███   ▐███  ▀███
 echo   ▄█    ███   ███          ███    ███  ▄███     ███▄
 echo ▄████████▀   ▄████▀        ███    █▀  ████       ███▄
 echo.
@@ -22,11 +23,7 @@ echo.
 echo ==========================================================
 echo.
 
-<<<<<<< HEAD
-:: --- GET USER INPUT ---
-=======
-<<<<<<< HEAD
->>>>>>> 46ebfb98a265ed72e73811a70a90c77eae9e3dfb
+rem --- KULLANICIDAN GİRDİLERİ ALMA BÖLÜMÜ ---
 
 set "TARGET_INPUT="
 set /p TARGET_INPUT="Enter target address (e.g., https://example.com): "
@@ -68,15 +65,7 @@ set "REPORT_ARG="
 set /p REPORT_INPUT="Report output file (optional, e.g., results.json or report.html): "
 if defined REPORT_INPUT set "REPORT_ARG=--report-file %REPORT_INPUT%"
 
-
-<<<<<<< HEAD
-:: --- START THE ATTACK ---
-=======
-
-=======
-
->>>>>>> 82561c943e417861aa964de617662c260c24a64e
->>>>>>> 46ebfb98a265ed72e73811a70a90c77eae9e3dfb
+rem --- PYTHON SCRIPTINI BAŞLATMA ---
 cls
 echo ==========================================================
 echo STARTING TEST...
@@ -88,10 +77,10 @@ echo.
 echo ==========================================================
 echo.
 
-:: Execute the Python script with all arguments
+rem Python scriptini toplanan argümanlarla çalıştır
 python spax.py %TARGET_INPUT% -p %PROTOCOL% -t %THREADS% %DURATION_ARG% %RAMP_UP_ARG% %PROXY_ARG% %PAYLOAD_ARG% %PAYLOAD_MODE_ARG% %REPORT_ARG%
 
-
+rem Scriptin hata ile çıkıp çıkmadığını kontrol et
 if %ERRORLEVEL% neq 0 (
     echo.
     echo ==========================================================
@@ -104,4 +93,5 @@ echo.
 echo ==========================================================
 echo Script finished. Press any key to close the window.
 echo ==========================================================
+rem Pencerenin hemen kapanmaması için kullanıcıdan bir tuşa basmasını bekle
 pause > nul
