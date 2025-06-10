@@ -6,7 +6,6 @@ title Spax - Professional Testing Framework
 cls
 color 0c
 
-rem 
 echo  ▄████████    ▄███████▄    ▄████████ ▀████    ▐████▀
 echo  ███    ███   ███    ███   ███    ███   ███▌   ████▀
 echo  ███    █▀    ███    ███   ███    ███    ███  ▐███
@@ -21,8 +20,6 @@ echo Made by. Kaiser
 echo.
 echo ==========================================================
 echo.
-
-rem 
 
 set "TARGET_INPUT="
 set /p TARGET_INPUT="Enter target address (e.g., https://example.com): "
@@ -64,7 +61,6 @@ set "REPORT_ARG="
 set /p REPORT_INPUT="Report output file (optional, e.g., results.json or report.html): "
 if defined REPORT_INPUT set "REPORT_ARG=--report-file %REPORT_INPUT%"
 
-rem
 cls
 echo ==========================================================
 echo STARTING TEST...
@@ -76,10 +72,8 @@ echo.
 echo ==========================================================
 echo.
 
-
 python spax.py %TARGET_INPUT% -p %PROTOCOL% -t %THREADS% %DURATION_ARG% %RAMP_UP_ARG% %PROXY_ARG% %PAYLOAD_ARG% %PAYLOAD_MODE_ARG% %REPORT_ARG%
 
-rem
 if %ERRORLEVEL% neq 0 (
     echo.
     echo ==========================================================
@@ -92,5 +86,4 @@ echo.
 echo ==========================================================
 echo Script finished. Press any key to close the window.
 echo ==========================================================
-rem Pencerenin hemen kapanmaması için kullanıcıdan bir tuşa basmasını bekle
 pause > nul
