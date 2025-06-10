@@ -22,20 +22,12 @@ echo.
 echo ==========================================================
 echo.
 
-<<<<<<< HEAD
 :: --- GET USER INPUT ---
 
 set "TARGET_INPUT="
 set /p TARGET_INPUT="Enter target address (e.g., https://example.com): "
 if not defined TARGET_INPUT (
     echo. & echo [ERROR] Target address is required. & timeout /t 2 > nul & goto start
-=======
-
-set "TARGET="
-set /p TARGET="target domain (orn: bombo.com): "
-if not defined TARGET (
-    echo. & echo [ERROR] It is mandatory to enter the destination address. & timeout /t 2 > nul & goto start
->>>>>>> 82561c943e417861aa964de617662c260c24a64e
 )
 
 set "PROTOCOL=http"
@@ -62,23 +54,18 @@ set "PAYLOAD_ARG="
 set /p PAYLOAD_INPUT="Payload file path (optional, e.g., data.json): "
 if defined PAYLOAD_INPUT set "PAYLOAD_ARG=--payload-file %PAYLOAD_INPUT%"
 
-:: YENİ: Payload kullanım modu için soru eklendi
 set "PAYLOAD_MODE_ARG="
 if defined PAYLOAD_ARG (
     set /p PAYLOAD_MODE_INPUT="Payload mode (random, sequential) [Default: random]: "
     if defined PAYLOAD_MODE_INPUT set "PAYLOAD_MODE_ARG=--payload-mode %PAYLOAD_MODE_INPUT%"
 )
 
-<<<<<<< HEAD
 set "REPORT_ARG="
 set /p REPORT_INPUT="Report output file (optional, e.g., results.json or report.html): "
 if defined REPORT_INPUT set "REPORT_ARG=--report-file %REPORT_INPUT%"
 
 
 :: --- START THE ATTACK ---
-=======
-
->>>>>>> 82561c943e417861aa964de617662c260c24a64e
 cls
 echo ==========================================================
 echo STARTING TEST...
@@ -90,17 +77,10 @@ echo.
 echo ==========================================================
 echo.
 
-<<<<<<< HEAD
 :: Execute the Python script with all arguments
 python spax.py %TARGET_INPUT% -p %PROTOCOL% -t %THREADS% %DURATION_ARG% %RAMP_UP_ARG% %PROXY_ARG% %PAYLOAD_ARG% %PAYLOAD_MODE_ARG% %REPORT_ARG%
 
 
-=======
-
-python spax.py -d %TARGET% -m %METHOD% -t %THREADS% %SECONDS_ARG% --quiet
-
-
->>>>>>> 82561c943e417861aa964de617662c260c24a64e
 if %ERRORLEVEL% neq 0 (
     echo.
     echo ==========================================================
