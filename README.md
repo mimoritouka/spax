@@ -6,6 +6,8 @@
 
 ## Overview
 
+![73c83f16-383b-4975-9d92-c5d02370ae34](https://github.com/user-attachments/assets/174c2312-0685-4902-bed4-c1017fb8097e)
+
 **Spax** is a **Legal Denial of Service (DoS) attack simulator** designed for resilience and security testing of target systems. It helps measure system robustness and identify potential vulnerabilities by simulating various attack methods like HTTP, TCP, and UDP.
 
 > ⚠️ **Warning:** Use this tool **only** for educational and authorized testing purposes. Unauthorized use is illegal and can lead to severe legal consequences.
