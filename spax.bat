@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 > nul
-title Spax - Professional Testing Framework
+title Spax
 
 :start
 cls
@@ -22,7 +22,7 @@ echo ==========================================================
 echo.
 
 set "TARGET_INPUT="
-set /p TARGET_INPUT="Enter target address (e.g., https://example.com): "
+set /p TARGET_INPUT="Enter target address (e.g., https://bombo.com): "
 if not defined TARGET_INPUT (
     echo. & echo [ERROR] Target address is required. & timeout /t 2 > nul & goto start
 )
